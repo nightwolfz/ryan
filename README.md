@@ -1,3 +1,9 @@
+
+
+# WARNING !! THIS IS BARELY WORKING !
+# Expect a stable release some time later
+
+
 # Installation
 
     npm install ryan
