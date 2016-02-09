@@ -1,0 +1,30 @@
+{
+  "name": "ryan",
+  "version": "0.0.1",
+  "description": "Context/store injection for your react components, the EASY WAY !",
+  "main": "ryan.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nightwolfz/ryan.git"
+  },
+  "keywords": [
+    "react",
+    "context",
+    "stores",
+    "redux",
+    "mobservable",
+    "flux",
+    "postcss",
+    "preact",
+    "inferno"
+  ],
+  "author": "Ryan Megidov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nightwolfz/ryan/issues"
+  },
+  "homepage": "https://github.com/nightwolfz/ryan#readme"
+}

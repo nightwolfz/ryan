@@ -1,0 +1,14 @@
+.idea/
+.DS_Store
+node_modules/
+dist/
+*.iml
+webpack-stats.json
+npm-debug.log
+build
+venues_*
+venues.zip
+public/sitemap.xml
+public/upload
+/generator.js
+/mqtt-bench.exe
