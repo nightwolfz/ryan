@@ -1,6 +1,6 @@
 
 
-# WARNING !! THIS IS BARELY WORKING !
+# WARNING !! THIS IS BARELY WORKING ! DO NOT USE !
 # Expect a stable release some time later
 
 
@@ -8,33 +8,23 @@
 
     npm install ryan
 
-# Running
+# Idea
 
-Run the following command in the root of the project:
+The goal is to provide contextTypes through higher-order components so you can write your code like this:
 
-    nodemon
+    import React from 'react';
+    import {context} from 'context';
 
-This will auto restart your server when changes are detected.
-
-
-# Usage
-
-Wrap your entry point component with the ContextProvider
-
-    import {React, ContextProvider} from './helpers/context';
-
-    const context = {
-        helloWorld(str) {
-            console.log('Hello ' + str);
+    class App extends React.Component {
+        render() {
+            console.log(this.context); // <--- contexttypes available without declaring them for each component
+            return <div>Test</div>
         }
-    };
+    }
 
-    // Render HTML on the browser
-    ReactDOM.render(<ContextProvider context={context}>
-        <YourApp/>
-    </ContextProvider>, document.getElementById('content'));
+    export default context(App);
 
 
 # Author
 
-    https://github.com/takanorig/mqtt-bench
+    https://github.com/nightwolfz

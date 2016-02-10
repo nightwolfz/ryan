@@ -1,27 +1,17 @@
 import React, {Component} from 'react';
-import {observer} from 'mobservable-react';
 
-/**
- * Define what to inject in the context
- */
-const contextTypes = {
-    router: React.PropTypes.object,
-    uiStore: React.PropTypes.object,
-    userStore: React.PropTypes.object,
-    chatStore: React.PropTypes.object,
-    cacheStore: React.PropTypes.object
+// You can add all contextTypes that you want to make available here.
+//@TODO: Allow setting types outside of this module.
+let contextTypes = {
+    router: React.PropTypes.object
 }
 
-const createContext = function(CreatedComponent) {
-    CreatedComponent.contextTypes = contextTypes;
-    return class extends React.Component {
-        render() {
-            return React.createElement(observer(CreatedComponent), this.props);
-        }
-    }
-};
+//@TODO: This doesn't work because mainController executes routes.js
+function setContextTypes(types) {
+    contextTypes = types;
+}
 
-createContext.subscribe = function(lookup) {
+function subscribe(lookup) {
     if (!lookup) return contextTypes;
 
     let customTypes = {};
@@ -34,34 +24,31 @@ createContext.subscribe = function(lookup) {
         }
     }
     return customTypes;
-};
+}
 
-/**
- * This component must wrap your main entry component (thus above react-router / i18n as well)
- */
-class ContextProvider extends Component {
+function createContext(component) {
+    component.contextTypes = contextTypes || {};
+    return component;
+}
 
-    static childContextTypes = contextTypes;
+function contextProvider() {
+    return class extends Component {
 
-    getChildContext() {
-        return Object.keys(contextTypes).reduce((contextType, k) => {
-            contextType[k] = this.props.context[k];
-            return contextType;
-        }, {})
-    }
+        static childContextTypes = contextTypes;
 
-    render() {
-        return this.props && this.props.children
+        getChildContext() {
+            if (!contextTypes) return {};
+
+            return Object.keys(contextTypes).reduce((contextType, k) => {
+                contextType[k] = this.props.context[k];
+                return contextType;
+            }, {})
+        }
+
+        render() {
+            return this.props && this.props.children
+        }
     }
 }
 
-/**
- * Export them all
- */
-export {
-    React,
-    Component,
-    contextTypes,
-    createContext as create,
-    ContextProvider
-};
+export {React, Component, createContext as context, setContextTypes, subscribe, contextProvider, contextTypes};
