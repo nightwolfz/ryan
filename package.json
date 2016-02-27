@@ -1,6 +1,6 @@
 {
   "name": "ryan",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Context/store injection for your react components, the EASY WAY !",
   "main": "lib/ryan.js",
   "scripts": {
