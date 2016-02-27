@@ -1,10 +1,11 @@
 {
   "name": "ryan",
-  "version": "0.0.2",
+  "version": "0.0.9",
   "description": "Context/store injection for your react components, the EASY WAY !",
-  "main": "ryan.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "babel": "node ./node_modules/babel-cli/bin/babel.js src --out-dir lib/",
+    "prepublish": "npm run babel"
   },
   "repository": {
     "type": "git",
@@ -12,10 +13,14 @@
   },
   "keywords": [
     "react",
+    "reactive",
+    "functional",
     "context",
     "stores",
     "redux",
+    "mobx",
     "mobservable",
+    "observable",
     "flux",
     "postcss",
     "preact",
@@ -26,5 +31,15 @@
   "bugs": {
     "url": "https://github.com/nightwolfz/ryan/issues"
   },
-  "homepage": "https://github.com/nightwolfz/ryan#readme"
+  "homepage": "https://github.com/nightwolfz/ryan#readme",
+  "dependencies": {
+    "mobx": "2.0.0",
+    "mobx-react": "3.0.0",
+    "react": "0.14.7",
+    "react-dom": "0.14.7"
+  },
+  "devDependencies": {
+    "babel-cli": "6.5.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "6.5.2"
+  }
 }
