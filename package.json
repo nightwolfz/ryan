@@ -1,10 +1,9 @@
 {
   "name": "ryan",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Context/store injection for your react components, the EASY WAY !",
   "main": "src/ryan.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nightwolfz/ryan.git"
