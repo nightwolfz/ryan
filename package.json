@@ -2,10 +2,8 @@
   "name": "ryan",
   "version": "0.2.2",
   "description": "Context/store injection for your react components, the EASY WAY !",
-  "main": "lib/ryan.js",
+  "main": "src/ryan.js",
   "scripts": {
-    "babel": "node ./node_modules/babel-cli/bin/babel.js src --out-dir lib/",
-    "prepublish": "npm run babel"
   },
   "repository": {
     "type": "git",
@@ -35,9 +33,5 @@
   "dependencies": {
     "mobx": "2.0.1",
     "mobx-react": "3.0.1"
-  },
-  "devDependencies": {
-    "babel-cli": "6.6.5",
-    "babel-plugin-transform-es2015-modules-commonjs": "6.6.5"
   }
 }

@@ -1,8 +1,7 @@
 'use strict';
 
-import {observer} from 'mobx-react';
-
-const contextTypes = {
+var mobxReact = require('mobx-react');
+var contextTypes = {
     router: function() {},
     state: function() {},
     store: function() {},
@@ -17,7 +16,7 @@ const contextTypes = {
 function connect(component) {
     if (!component) return contextTypes;
 
-    return observer(provide(component))
+    return mobxReact.observer(provide(component))
 }
 
 /**
@@ -30,8 +29,6 @@ function provide(component) {
     return component
 }
 
-export {
-    connect,
-    provide,
-    contextTypes
-};
+exports.connect = connect;
+exports.provide = provide;
+exports.contextTypes = contextTypes;
