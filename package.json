@@ -33,11 +33,11 @@
   },
   "homepage": "https://github.com/nightwolfz/ryan#readme",
   "dependencies": {
-    "mobx": "2.0.0",
-    "mobx-react": "3.0.0"
+    "mobx": "2.0.1",
+    "mobx-react": "3.0.1"
   },
   "devDependencies": {
-    "babel-cli": "6.5.1",
-    "babel-plugin-transform-es2015-modules-commonjs": "6.5.2"
+    "babel-cli": "6.6.5",
+    "babel-plugin-transform-es2015-modules-commonjs": "6.6.5"
   }
 }
