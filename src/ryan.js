@@ -32,5 +32,6 @@ function provide(component) {
 
 export {
     connect,
-    provide
+    provide,
+    contextTypes
 };
