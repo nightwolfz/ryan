@@ -16,11 +16,14 @@ var contextTypes = {
 function connect(component) {
     if (!component) return contextTypes;
 
-    return mobxReact.observer(provide(component))
+    // Grant components access to store and state.
+    component.contextTypes = contextTypes || {};
+
+    return mobxReact.observer(component)
 }
 
 /**
- * Grant components access to stores and state.
+ * Grant components access to store and state without making observable
  * @param component {Component|Object}
  * @returns {Component|Object}
  */
