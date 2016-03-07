@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/nightwolfz/ryan#readme",
   "dependencies": {
-    "mobx": "2.0.1",
+    "mobx": "2.0.2",
     "mobx-react": "3.0.1"
   }
 }
