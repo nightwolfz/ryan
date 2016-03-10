@@ -13,9 +13,10 @@ The goal is to provide contextTypes through higher-order components so you can w
     @connect
     class App extends React.Component {
         render() {
-            this.context.store.doSomething1() // <--- store methods available at all time
-            console.log(this.context.state); // <--- state available at all time
-            return <div>Test</div>
+            // store methods available at all times
+            this.context.store.getUsername()
+            // state available at all times
+            return <div>{this.context.state.username}</div>
         }
     }
 
@@ -25,6 +26,9 @@ The goal is to provide contextTypes through higher-order components so you can w
      * around a ContextProvider before rendering
      * @returns {Component}
      */
+    import React from 'react';
+    import {contextTypes} from 'ryan';
+
     class ContextProvider extends React.Component {
 
         static childContextTypes = contextTypes;
@@ -38,16 +42,18 @@ The goal is to provide contextTypes through higher-order components so you can w
         }
     }
 
-
-    // Initialize stores & inject server-side state into front-end
+    /**
+     * Then we put it all together.
+     * Initialize stores & inject state into our context
+     */
     const context = {
         state: window.__STATE, // an observable mobx object
         store: {
-            doSomething1() {
-                window.__STATE.username = 'test';
+            setUsername(username) {
+                window.__STATE.username = username;
             },
-            doSomething2() {
-                return window.__STATE.something;
+            getUsername() {
+                return window.__STATE.username;
             }
         }
     }
