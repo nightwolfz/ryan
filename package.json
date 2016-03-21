@@ -1,6 +1,6 @@
 {
   "name": "ryan",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "MobX @connect decorator for your react components",
   "main": "src/ryan.js",
   "scripts": {},
