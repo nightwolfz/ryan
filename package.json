@@ -1,7 +1,7 @@
 {
   "name": "ryan",
   "version": "0.3.2",
-  "description": "Context/store injection for your react components, the EASY WAY !",
+  "description": "MobX @connect decorator for your react components",
   "main": "src/ryan.js",
   "scripts": {},
   "repository": {
@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/nightwolfz/ryan#readme",
   "dependencies": {
-    "mobx": "2.0.2",
-    "mobx-react": "3.0.1"
+    "mobx": "2.0.3",
+    "mobx-react": "3.0.3"
   }
 }
