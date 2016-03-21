@@ -8,37 +8,6 @@ var defaultContextTypes = {
     cache: function() {}
 }
 
-function compose(makeObservable) {
-    var args = Array.prototype.slice.call(arguments);
-    if (args && args.length) {
-
-        // @connect
-        // The first argument is the component.
-        if (typeof args[0] === 'function') {
-            args[0].contextTypes = defaultContextTypes;
-
-            return makeObservable ? mobxReact.observer(args[0]) : args[0]
-        }
-
-        // @connect('store', 'state', ''...)
-        return function(component) {
-            component.contextTypes = args.reduce((obj, contextItem) => {
-                obj[contextItem] = function() {}
-                return obj
-            }, {});
-            return makeObservable ? mobxReact.observer(component) : component
-        }
-
-    } else {
-
-        // @connect()
-        return function(component) {
-            component.contextTypes = defaultContextTypes;
-            return makeObservable ? mobxReact.observer(component) : component
-        }
-    }
-}
-
 /**
  * Create contextTypes object from an array of strings.
  * @param ctxTypes {Array}
